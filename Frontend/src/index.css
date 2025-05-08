@@ -1,0 +1,158 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-astra-background text-astra-white font-sans antialiased;
+  }
+}
+
+.crypto-connection {
+  stroke-dasharray: 10;
+  stroke-dashoffset: 20;
+  animation: dash 20s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.hover-glow:hover {
+  filter: drop-shadow(0 0 8px #2BFFF8);
+}
+
+.glow-text {
+  text-shadow: 0 0 10px rgba(43, 255, 248, 0.5);
+}
+
+.glow-card {
+  box-shadow: 0 0 20px rgba(0, 115, 66, 0.3);
+}
+
+.network-card {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 115, 66, 0.15);
+}
+
+.bg-dots {
+  background-image: radial-gradient(#2BFFF8 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.05;
+}
+
+.gradient-button {
+  background: linear-gradient(90deg, #007342 0%, #2BFFF8 100%);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.gradient-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #007342 0%, #2BFFF8 100%);
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.gradient-button:hover::before {
+  opacity: 0.8;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(176, 252, 206, 0.1);
+  pointer-events: none;
+}
+
+/* 3D Animation Effects */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Slow transition */
+.duration-3000 {
+  transition-duration: 3000ms;
+}
+
+/* Glowing Light Effect */
+.glow-blue {
+  filter: drop-shadow(0 0 10px rgba(43, 255, 248, 0.7));
+}
+
+.glow-green {
+  filter: drop-shadow(0 0 10px rgba(0, 115, 66, 0.7));
+}
+
+/* Hero section enhancements */
+.hero-title {
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  background: linear-gradient(90deg, #B0FCCE, #2BFFF8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  opacity: 0.9;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
