@@ -17,7 +17,7 @@ Central is a comprehensive project that includes a Frontend, Backend, and Contra
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/your-username/central.git
+git clone git@github.com:SachPlayZ/gig.ai.git
 cd central
 ```
 
