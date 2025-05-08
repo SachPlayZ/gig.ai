@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, PlusIcon, SendIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 import Navbar from '@/components/Navbar';
@@ -56,15 +56,15 @@ const Index = () => {
           </p>
 
           <div className="flex flex-wrap gap-5 mt-10">
-            <Button className="gradient-button text-astra-white px-8 py-5 rounded-md font-bold text-base shadow-glow-sm hover:shadow-glow-md transition-all duration-300 transform hover:-translate-y-1">
-              Get Started <ArrowRight className="ml-2" size={18} />
+            <Button className="bg-[#064119] border-gray-300 border-2 text-white px-8 py-5 rounded-md font-medium text-lg">
+              Post a Gig <PlusIcon className="ml-2" size={18} />
             </Button>
 
             <Button
               variant="outline"
-              className="border-astra-green/40 text-astra-white hover:bg-astra-blue hover:bg-opacity-10 hover:text-astra-light-green px-8 py-5 font-medium backdrop-blur-sm"
+              className="bg-[#1A1A1A] text-white border-gray-300 hover:bg-[#1A1A1A]/80 hover:text-[#00B4AB] px-8 py-5 font-medium text-lg"
             >
-              See Our Services
+              Build an Agent <SendIcon className="ml-2" size={18} />
             </Button>
           </div>
         </div>

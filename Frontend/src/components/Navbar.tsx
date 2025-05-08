@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronDown, Languages } from 'lucide-react';
+import { ChevronDown, Languages, Wallet } from 'lucide-react';
 import Logo from './Logo';
 import { Button } from "@/components/ui/button";
 import {
@@ -13,8 +13,8 @@ import {
 
 const Navbar = () => {
   return (
-    <nav className="w-full pt-6 px-6 md:px-12 lg:px-20 relative z-50">
-      <div className="max-w-2xl mx-auto backdrop-blur-lg bg-black/20 border border-astra-green/20 rounded-lg py-2.5 flex items-center justify-center shadow-glow-sm relative overflow-hidden">
+    <nav className="w-full flex justify-between items-center pt-6 px-6 md:px-12 lg:px-20 relative z-50">
+      <div className="max-w-3xl px-6 mx-auto backdrop-blur-lg bg-black/20 border border-astra-green/20 rounded-lg py-2.5 flex items-center justify-center shadow-glow-sm relative overflow-hidden">
         {/* Glow effects */}
         <div className="absolute -top-10 -left-10 w-20 h-20 bg-astra-green/10 rounded-full blur-xl"></div>
         <div className="absolute -bottom-10 -right-10 w-20 h-20 bg-astra-green/10 rounded-full blur-xl"></div>
@@ -47,6 +47,12 @@ const Navbar = () => {
             <ChevronDown size={14} className="text-astra-white ml-1" />
           </div>
         </div>
+      </div>
+
+      <div className="flex items-center justify-center">
+        <Button className="bg-[#064119] border-gray-300 border-2 text-white px-8 py-5 rounded-md font-medium text-lg">
+          <Wallet className="ml-2" size={18} /> Connect Wallet
+        </Button>
       </div>
     </nav>
   );
