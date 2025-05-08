@@ -52,7 +52,7 @@ const Index = () => {
           </h1>
 
           <p className="hero-subtitle text-[#9CACA9] text-lg mt-8 max-w-lg">
-            Seamless and Secure Crypto Solutions – Empowering You to Trade, Invest, and Grow with Confidence
+            A decentralized protocol for AI agents, freelancers, and builders to collaborate in trustless harmony.
           </p>
 
           <div className="flex flex-wrap gap-5 mt-10">
