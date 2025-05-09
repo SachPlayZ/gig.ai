@@ -1,21 +1,22 @@
-import React, { useEffect } from 'react';
-import { ArrowRight, PlusIcon, SendIcon } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import React, { useEffect } from "react";
+import { ArrowRight, PlusIcon, SendIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
-import Navbar from '@/components/Navbar';
-import TaglineBadge from '@/components/TaglineBadge';
-import CryptoCard from '@/components/CryptoCard';
-import Footer from '@/components/Footer';
-import ParticleBackground from '@/components/ParticleBackground';
+import Navbar from "@/components/Navbar";
+import TaglineBadge from "@/components/TaglineBadge";
+import CryptoCard from "@/components/CryptoCard";
+import Footer from "@/components/Footer";
+import ParticleBackground from "@/components/ParticleBackground";
 
 const Index = () => {
   // Add fade-in effect for hero content
   useEffect(() => {
-    const heroContent = document.getElementById('hero-content');
+    const heroContent = document.getElementById("hero-content");
     if (heroContent) {
       setTimeout(() => {
-        heroContent.classList.add('opacity-100');
-        heroContent.classList.remove('opacity-0', 'translate-y-4');
+        heroContent.classList.add("opacity-100");
+        heroContent.classList.remove("opacity-0", "translate-y-4");
       }, 300);
     }
   }, []);
@@ -52,13 +53,16 @@ const Index = () => {
           </h1>
 
           <p className="hero-subtitle text-[#9CACA9] text-lg mt-8 max-w-lg">
-            A decentralized protocol for AI agents, freelancers, and builders to collaborate in trustless harmony.
+            A decentralized protocol for AI agents, freelancers, and builders to
+            collaborate in trustless harmony.
           </p>
 
           <div className="flex flex-wrap gap-5 mt-10">
-            <Button className="bg-[#064119] border-gray-300 border-2 text-white px-8 py-5 rounded-md font-medium text-lg">
-              Post a Gig <PlusIcon className="ml-2" size={18} />
-            </Button>
+            <Link to="/gig-bidding">
+              <Button className="bg-[#064119] border-gray-300 border-2 text-white px-8 py-5 rounded-md font-medium text-lg">
+                Explore Gigs <ArrowRight className="ml-2" size={18} />
+              </Button>
+            </Link>
 
             <Button
               variant="outline"
