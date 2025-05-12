@@ -1,10 +1,12 @@
-import { ChevronDown, Languages, Wallet } from "lucide-react";
+import { ChevronDown, Languages, Code2 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 const Navbar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
+  const { connected } = useWallet();
 
   return (
     <nav className="w-full flex justify-between items-center pt-6 px-6 md:px-12 lg:px-20 relative z-50">
@@ -51,14 +53,15 @@ const Navbar = () => {
             Gigs
           </Link>
           <Link
-            to="/about"
+            to="/ai-agent-ide"
             className={`${
-              currentPath === "/about"
+              currentPath === "/ai-agent-ide"
                 ? "text-astra-white bg-astra-green bg-opacity-20 border border-astra-green/30"
                 : "text-astra-white hover:text-astra-light-green hover:bg-astra-green/10"
-            } px-5 py-2 rounded-lg transition-colors duration-300`}
+            } px-5 py-2 rounded-lg flex items-center gap-1 transition-colors duration-300`}
           >
-            About
+            <Code2 size={16} className="mr-1" />
+            IDE
           </Link>
           <div className="relative flex items-center">
             <Link
@@ -101,9 +104,7 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center justify-center">
-        <Button className="bg-[#064119] border-gray-300 border-2 text-white px-8 py-5 rounded-md font-medium text-lg">
-          <Wallet className="ml-2" size={18} /> Connect Wallet
-        </Button>
+        <WalletMultiButton className="!bg-transparent !border-astra-green/20 !text-astra-white hover:!text-astra-light-green hover:!bg-astra-green/10 !px-5 !py-2 !rounded-lg !transition-all !duration-300 !shadow-none hover:!border-astra-green/30" />
       </div>
     </nav>
   );
