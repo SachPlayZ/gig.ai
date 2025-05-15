@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 
 export async function generate(prompt: string): Promise<string> {
   try {
-    const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || 'AIzaSyDTH5jjua96R-W5SFYFk5SD7DfQJ1treNw');
+    const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || 'hehe');
     
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-preview-04-17" });
 
