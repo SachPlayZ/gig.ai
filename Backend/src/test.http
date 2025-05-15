@@ -1,0 +1,11 @@
+POST http://localhost:3000/analyse
+Content-Type: application/json
+
+{
+    "agent_code": "import requests\n\n# Replace with your own NewsAPI key\nAPI_KEY = 'your_newsapi_key_here'\nBASE_URL = 'https://newsapi.org/v2/top-headlines'\nCOUNTRY = 'us'  # You can change this to 'in', 'gb', etc.\n\ndef fetch_top_headlines(country='us', category=None):\n    params = {\n        'apiKey': API_KEY,\n        'country': country,\n        'category': category,\n        'pageSize': 5  # number of headlines to fetch\n    }\n    response = requests.get(BASE_URL, params=params)\n\n    if response.status_code == 200:\n        articles = response.json().get('articles', [])\n        if not articles:\n            print('No articles found.')\n            return\n\n        print(f'\\nTop headlines from {country.upper()}:\\n')\n        for i, article in enumerate(articles, 1):\n            print(f'{i}. {article['title']}')\n            print(f'   Source: {article['source']['name']}')\n            print(f'   URL: {article['url']}\\n')\n    else:\n        print('Failed to fetch news:', response.status_code)\n\nif __name__ == '__main__':\n    fetch_top_headlines(country='us')",
+    "agent_metadata": {
+        "name": "News Agent",
+        "version": "1.0.0",
+        "description": "A news agent that fetches top headlines from the US"
+    }
+}
